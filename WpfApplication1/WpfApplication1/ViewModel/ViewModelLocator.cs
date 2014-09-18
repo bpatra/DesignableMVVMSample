@@ -6,15 +6,14 @@ namespace WpfApplication1.ViewModel
 {
     public class ViewModelLocator
     {
-         private readonly IKernel _kernel;
+         private static readonly IKernel _kernel;
         
-
-        public ViewModelLocator()
+        static ViewModelLocator()
         {
             var kernel = new StandardKernel();
             if (ViewModelBase.IsInDesignModeStatic)
             {
-                 kernel.Bind<IBasicVM>().To<DesignBasicVM>();
+                 kernel.Bind<IBasicVM>().To<DesignBasicVm>();
             }
             else
             {
@@ -24,7 +23,7 @@ namespace WpfApplication1.ViewModel
         }
 
 
-        public IBasicVM Get { get { return _kernel.Get<IBasicVM>(); } }
+        public IBasicVM BasicVm { get { return _kernel.Get<IBasicVM>(); } }
 
     }
 

@@ -1,6 +1,6 @@
 ﻿namespace WpfApplication1.ViewModel
 {
-    class DesignBasicVM : IBasicVM
+    class DesignBasicVm : IBasicVM
     {
         public string GetContent
         {
