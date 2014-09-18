@@ -1,28 +1,31 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
+using GalaSoft.MvvmLight;
+using Ninject;
 
 namespace WpfApplication1.ViewModel
 {
     public class ViewModelLocator
     {
-        public static class ServiceLocator
-        {
-            public static IBasicVM VM;
-        }
+         private readonly IKernel _kernel;
+        
 
         public ViewModelLocator()
         {
+            var kernel = new StandardKernel();
             if (ViewModelBase.IsInDesignModeStatic)
             {
-                ServiceLocator.VM = new DesignBasicVM();
+                 kernel.Bind<IBasicVM>().To<DesignBasicVM>();
             }
             else
             {
-                ServiceLocator.VM = new BasicVm();
+                kernel.Bind<IBasicVM>().To<BasicVm>();
             }
+            _kernel = kernel;
         }
 
 
-        public IBasicVM Get { get { return ServiceLocator.VM; } }
+        public IBasicVM Get { get { return _kernel.Get<IBasicVM>(); } }
+
     }
 
   
