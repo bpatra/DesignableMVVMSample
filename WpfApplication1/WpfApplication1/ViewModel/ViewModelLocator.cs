@@ -1,15 +1,14 @@
 ﻿using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Windows;
 
-namespace WpfApplication1
+namespace WpfApplication1.ViewModel
 {
     public class ViewModelLocator
     {
+        public static class ServiceLocator
+        {
+            public static IBasicVM VM;
+        }
+
         public ViewModelLocator()
         {
             if (ViewModelBase.IsInDesignModeStatic)
@@ -18,7 +17,7 @@ namespace WpfApplication1
             }
             else
             {
-                ServiceLocator.VM = new BasicVM();
+                ServiceLocator.VM = new BasicVm();
             }
         }
 
@@ -26,8 +25,5 @@ namespace WpfApplication1
         public IBasicVM Get { get { return ServiceLocator.VM; } }
     }
 
-    public static class ServiceLocator
-    {
-        public static IBasicVM VM;
-    }
+  
 }

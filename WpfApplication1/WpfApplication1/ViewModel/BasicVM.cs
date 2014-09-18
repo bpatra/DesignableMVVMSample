@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WpfApplication1
+﻿namespace WpfApplication1.ViewModel
 {
-    public class BasicVM : IBasicVM
+    public class BasicVm : IBasicVM
     {
         public string GetContent
         {
