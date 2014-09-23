@@ -1,31 +1,66 @@
-﻿using System;
+/*
+  In App.xaml:
+  <Application.Resources>
+      <vm:ViewModelLocator xmlns:vm="clr-namespace:WpfApplication1"
+                           x:Key="Locator" />
+  </Application.Resources>
+  
+  In the View:
+  DataContext="{Binding Source={StaticResource Locator}, Path=ViewModelName}"
+
+  You can also use Blend to do all this with the tool's support.
+  See http://www.galasoft.ch/mvvm
+*/
+
+using System;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Ioc;
+using Microsoft.Practices.ServiceLocation;
 using Ninject;
+using WpfApplication1.ViewModel.Design;
 
 namespace WpfApplication1.ViewModel
 {
     public class ViewModelLocator
     {
-         private static readonly IKernel _kernel;
-        
+        private static readonly IKernel _kernel;
+
         static ViewModelLocator()
         {
-            var kernel = new StandardKernel();
+            _kernel = new StandardKernel();
             if (ViewModelBase.IsInDesignModeStatic)
             {
-                 kernel.Bind<IBasicVM>().To<DesignBasicVm>();
+                _kernel.Bind<IMainViewModel>().To<MainViewModel>();
+                _kernel.Bind<ISummaryTabViewModel>().To<DesignSummaryTabViewModel>();
+                _kernel.Bind<IBooksReadTabViewModel>().To<DesignBooksReadTabViewModel>();
             }
             else
             {
-                kernel.Bind<IBasicVM>().To<BasicVm>();
+               
+                _kernel.Bind<IMainViewModel>().To<MainViewModel>().InSingletonScope();
+
+                _kernel.Bind<ISummaryTabViewModel>().To<SummaryTabViewModel>();
+                _kernel.Bind<IBooksReadTabViewModel>().To<BooksReadTabViewModel>();
+
+                _kernel.Bind<IPerson>().ToMethod((ctx) =>
+                {
+                    var mainViewModelInstance = _kernel.Get<IMainViewModel>();
+                    if (mainViewModelInstance.SelectedPerson == null)
+                    {
+                        throw new InvalidOperationException();
+                    }
+                    return mainViewModelInstance.SelectedPerson;
+                });
+
             }
-            _kernel = kernel;
+
         }
 
+        public static IMainViewModel MainViewModel { get { return _kernel.Get<IMainViewModel>(); } }
 
-        public IBasicVM BasicVm { get { return _kernel.Get<IBasicVM>(); } }
+        public static ISummaryTabViewModel SummaryTabViewModel { get { return _kernel.Get<ISummaryTabViewModel>(); } }
+
+        public static IBooksReadTabViewModel BooksReadTabViewModel { get { return _kernel.Get<IBooksReadTabViewModel>(); } }
 
     }
-
-  
 }
