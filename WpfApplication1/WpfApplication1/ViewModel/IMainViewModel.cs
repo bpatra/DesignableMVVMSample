@@ -11,5 +11,9 @@ namespace WpfApplication1.ViewModel
         IList<IPerson> AvailablePersons { get; }
 
         int SelectedTabIndex { get; set; }
+
+        ISummaryTabViewModel SummaryTabViewModel { get; }
+
+        IBooksReadTabViewModel BooksReadTabViewModel { get; }
     }
 }

@@ -36,22 +36,7 @@ namespace WpfApplication1.ViewModel
             }
             else
             {
-               
                 _kernel.Bind<IMainViewModel>().To<MainViewModel>().InSingletonScope();
-
-                _kernel.Bind<ISummaryTabViewModel>().To<SummaryTabViewModel>();
-                _kernel.Bind<IBooksReadTabViewModel>().To<BooksReadTabViewModel>();
-
-                _kernel.Bind<IPerson>().ToMethod((ctx) =>
-                {
-                    var mainViewModelInstance = _kernel.Get<IMainViewModel>();
-                    if (mainViewModelInstance.SelectedPerson == null)
-                    {
-                        throw new InvalidOperationException();
-                    }
-                    return mainViewModelInstance.SelectedPerson;
-                });
-
             }
 
         }

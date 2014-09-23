@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
+using WpfApplication1.ViewModel.Design;
 
 namespace WpfApplication1.ViewModel
 {
@@ -22,9 +24,25 @@ namespace WpfApplication1.ViewModel
         public IPerson SelectedPerson
         {
             get { return _selectedPerson; }
-            set { _selectedPerson = value; }
+            set
+            {
+                _selectedPerson = value;
+                RaisePropertyChanged(()=>SummaryTabViewModel);
+                RaisePropertyChanged(() => BooksReadTabViewModel);
+            }
         }
         public IList<IPerson> AvailablePersons { get { return _availablePersons; } }
         public int SelectedTabIndex { get; set; }
+
+        public ISummaryTabViewModel SummaryTabViewModel
+        {
+            get { return new SummaryTabViewModel(_selectedPerson); }
+        }
+
+
+        public IBooksReadTabViewModel BooksReadTabViewModel
+        {
+            get { {return new BooksReadTabViewModel(_selectedPerson);} }
+        }
     }
 }
