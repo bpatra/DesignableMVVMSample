@@ -4,23 +4,17 @@
         xmlns:viewModel="clr-namespace:WpfApplication1.ViewModel" 
         xmlns:views="clr-namespace:WpfApplication1.Views"
         Title="MainWindow" Height="350" Width="525">
-    <Window.Resources>
-        <ResourceDictionary>
-            <viewModel:ViewModelLocator x:Key="Locator" />
-        </ResourceDictionary>
-    </Window.Resources>
     <Window.DataContext>
         <Binding Path="MainViewModel" Source="{StaticResource Locator}" />
     </Window.DataContext>
     <Grid>
-        
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Horizontal">
-                <ComboBox ItemsSource="{Binding AvailablePersons}" IsTextSearchEnabled="True" IsEditable="False" SelectedItem="{Binding SelectedPerson}" Margin="10">
+                <ComboBox ItemsSource="{Binding AvailablePersons}" IsTextSearchEnabled="True" IsEditable="False" SelectedItem="{Binding SelectedPerson}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}"/>
@@ -28,7 +22,6 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
             </StackPanel>
-           
         </StackPanel>
         <TabControl Name="Test" VerticalAlignment="Top" HorizontalAlignment="Stretch" SelectedIndex="{Binding SelectedTabIndex}" Grid.Row="2">
             <TabItem Name="HomeTab"  Header="Summary">
