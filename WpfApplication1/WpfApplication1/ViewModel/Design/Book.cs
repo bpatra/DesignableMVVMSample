@@ -7,13 +7,18 @@ namespace WpfApplication1.ViewModel.Design
 {
     public class Book : IBook
     {
-        public Book(string title, string role)
+        public Book(string title, int idex)
         {
             Title = title;
-            Genre = role;
+            SelectedGenre = this.AllAvailableGenres.ElementAt(idex);
         }
 
         public string Title { get; set; }
-        public string Genre { get; set; }
+        public string SelectedGenre { get; set; }
+
+        public List<string> AllAvailableGenres
+        {
+            get { return new List<string>(new[] { "Novel", "Drama", "Fantasy", "Classic", "Folklore", "Mythology " }); }
+        }
     }
 }

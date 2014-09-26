@@ -16,7 +16,7 @@
                     <GridViewColumn Header="Genre">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <ComboBox SelectedValue="{Binding Path=Genre}" ItemsSource="{Binding Path=AllAvailableGenres, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"/>
+                                <ComboBox ItemsSource="{Binding Path=AllAvailableGenres}" SelectedItem="{Binding Path=SelectedGenre}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

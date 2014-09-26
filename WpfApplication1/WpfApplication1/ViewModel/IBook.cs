@@ -9,6 +9,8 @@ namespace WpfApplication1.ViewModel
     {
         string Title { get; }
 
-        string Genre { get; set; }
+        string SelectedGenre { get; set; }
+
+        List<string> AllAvailableGenres { get; }
     }
 }

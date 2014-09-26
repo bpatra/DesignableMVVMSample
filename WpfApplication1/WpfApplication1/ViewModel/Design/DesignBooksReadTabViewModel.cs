@@ -20,7 +20,7 @@ namespace WpfApplication1.ViewModel.Design
 
         public ObservableCollection<IBook> BooksRead
         {
-            get { return new ObservableCollection<IBook>(new[] { new Book("1984 Georges Orwell","Novel"), new Book("Animal Farm","Novel")} ); }
+            get { return new ObservableCollection<IBook>(new[] { new Book("1984 Georges Orwell",0), new Book("Animal Farm",2)} ); }
         }
     }
 }

@@ -14,9 +14,9 @@ namespace WpfApplication1.ViewModel
         {
             _availablePersons = new List<IPerson>(new[]
                 {
-                    new Person(){Name = "John Doe", Age = 30, BooksRead = new IBook[]{ new Book( "Animal Farm" ,"Novel"), new Book( "1984","Novel")}}, 
-                    new Person(){Name = "Sophie Germain", Age = 45, BooksRead = new[]{new Book( "Les Misérables" ,"Novel"), new Book( "Notre Dame de Paris","Novel"), }},
-                    new Person(){Name = "Pierre Fermat", Age = 20, BooksRead = new[]{new Book( "La Curée" ,"Novel"), new Book( "La bête humaine","Novel"),new Book( "Germinal","Novel")}},
+                    new Person(){Name = "John Doe", Age = 30, BooksRead = new IBook[]{ new Book( "Animal Farm" ,0), new Book( "1984",2)}}, 
+                    new Person(){Name = "Sophie Germain", Age = 45, BooksRead = new[]{new Book( "Les Misérables" ,1), new Book( "Notre Dame de Paris",4), }},
+                    new Person(){Name = "Pierre Fermat", Age = 20, BooksRead = new[]{new Book( "La Curée" ,3), new Book( "La bête humaine",0),new Book( "Germinal",2)}},
                 });
             _selectedPerson = _availablePersons[1];
         }

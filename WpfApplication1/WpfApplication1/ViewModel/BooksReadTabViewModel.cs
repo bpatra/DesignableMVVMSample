@@ -18,12 +18,6 @@ namespace WpfApplication1.ViewModel
 
         public ObservableCollection<IBook> BooksRead { get{return new ObservableCollection<IBook>(_person.BooksRead);} }
 
-        public List<string> AllAvailableGenres
-        {
-            get { return new List<string>(new[] { "Novel", "Drama", "Fantasy", "Classic", "Folklore", "Mythology " }); }
-        }
-
-
         public IBook SelectedBook { get; set; }
     }
 }
