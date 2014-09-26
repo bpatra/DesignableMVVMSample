@@ -16,7 +16,9 @@
                     <GridViewColumn Header="Genre">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
+<!-- ReSharper disable Xaml.BindingWithContextNotResolved -->
                                 <ComboBox ItemsSource="{Binding Path=AllAvailableGenres}" SelectedItem="{Binding Path=SelectedGenre}"/>
+<!-- ReSharper restore Xaml.BindingWithContextNotResolved -->
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
