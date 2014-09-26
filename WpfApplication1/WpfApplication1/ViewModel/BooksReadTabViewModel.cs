@@ -16,6 +16,14 @@ namespace WpfApplication1.ViewModel
             _person = person;
         }
 
-        public ObservableCollection<string> BooksRead { get{return new ObservableCollection<string>(_person.BooksRead);} }
+        public ObservableCollection<IBook> BooksRead { get{return new ObservableCollection<IBook>(_person.BooksRead);} }
+
+        public List<string> AllAvailableGenres
+        {
+            get { return new List<string>(new[] { "Novel", "Drama", "Fantasy", "Classic", "Folklore", "Mythology " }); }
+        }
+
+
+        public IBook SelectedBook { get; set; }
     }
 }

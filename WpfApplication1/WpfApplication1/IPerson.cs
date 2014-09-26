@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using WpfApplication1.ViewModel;
 
 namespace WpfApplication1
 {
@@ -12,7 +13,7 @@ namespace WpfApplication1
 
         int Age { get; }
 
-        string[] BooksRead { get;} 
+        IBook[] BooksRead { get;} 
     }
 
     public class Person : IPerson
@@ -21,6 +22,6 @@ namespace WpfApplication1
 
         public int Age { get; set; }
 
-        public string[] BooksRead { get; set; } 
+        public IBook[] BooksRead { get; set; } 
     }
 }

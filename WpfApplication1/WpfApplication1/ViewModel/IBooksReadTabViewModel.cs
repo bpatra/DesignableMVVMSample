@@ -8,6 +8,10 @@ namespace WpfApplication1.ViewModel
 {
     public interface IBooksReadTabViewModel
     {
-        ObservableCollection<string> BooksRead { get; }
+        ObservableCollection<IBook> BooksRead { get; }
+
+        List<string> AllAvailableGenres { get; }
+
+        IBook SelectedBook { get; set; }
     }
 }

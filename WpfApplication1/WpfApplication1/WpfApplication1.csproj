@@ -72,8 +72,10 @@
     </ApplicationDefinition>
     <Compile Include="IPerson.cs" />
     <Compile Include="ViewModel\BooksReadTabViewModel.cs" />
+    <Compile Include="ViewModel\Design\Book.cs" />
     <Compile Include="ViewModel\Design\DesignBooksReadTabViewModel.cs" />
     <Compile Include="ViewModel\Design\DesignSummaryTabViewModel.cs" />
+    <Compile Include="ViewModel\IBook.cs" />
     <Compile Include="ViewModel\IBooksReadTabViewModel.cs" />
     <Compile Include="ViewModel\IMainViewModel.cs" />
     <Compile Include="ViewModel\ISummaryTabViewModel.cs" />

@@ -6,12 +6,21 @@ using System.Text;
 
 namespace WpfApplication1.ViewModel.Design
 {
-    internal class DesignBooksReadTabViewModel
+    public class DesignBooksReadTabViewModel
         : IBooksReadTabViewModel
     {
-        public ObservableCollection<string> BooksRead
+
+        public List<string> AllAvailableGenres
         {
-            get { return new ObservableCollection<string>(new[] {"1984 Georges Orwell", "Animal Farm"}); }
+            get { return new List<string>(new[] { "Novel", "Drama", "Fantasy" }); }
+        }
+
+        public IBook SelectedBook { get { return this.BooksRead[0]; } set{throw new InvalidOperationException();}}
+
+
+        public ObservableCollection<IBook> BooksRead
+        {
+            get { return new ObservableCollection<IBook>(new[] { new Book("1984 Georges Orwell","Novel"), new Book("Animal Farm","Novel")} ); }
         }
     }
 }
