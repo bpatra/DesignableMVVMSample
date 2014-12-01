@@ -2,28 +2,23 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:WpfApplication1.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="400">
     <UserControl.DataContext>
         <Binding Path="MainViewModel.BooksReadTabViewModel" Source="{StaticResource Locator}" />
     </UserControl.DataContext>
-    <ListView ItemsSource="{Binding Path=BooksRead}" SelectedItem="{Binding SelectedBook}">
-        <ListView.View>
-            <GridView  AllowsColumnReorder="false" >
-                <GridView.Columns>
-                    <GridViewColumn Header="BookName"  DisplayMemberBinding="{Binding Path=Title}"/>
-                    <GridViewColumn Header="Genre">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-<!-- ReSharper disable Xaml.BindingWithContextNotResolved -->
-                                <ComboBox ItemsSource="{Binding Path=AllAvailableGenres}" SelectedItem="{Binding Path=SelectedGenre}"/>
-<!-- ReSharper restore Xaml.BindingWithContextNotResolved -->
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView.Columns>
-            </GridView>
-        </ListView.View>
-    </ListView>
+    <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Path=BooksRead}" SelectedItem="{Binding SelectedBook}">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="BookName"  Binding="{Binding Path=Title}"/>
+            <DataGridTemplateColumn Header="Genre">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate DataType="{x:Type vm:IBook}">
+                        <ComboBox ItemsSource="{Binding Path=AllAvailableGenres}" SelectedItem="{Binding Path=SelectedGenre}"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+    </DataGrid>
 </UserControl>
