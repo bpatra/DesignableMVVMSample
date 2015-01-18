@@ -9,12 +9,12 @@
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Horizontal">
-                <ComboBox ItemsSource="{Binding AvailablePersons}" IsTextSearchEnabled="True" IsEditable="False" SelectedItem="{Binding SelectedPerson}">
+                <ComboBox Height="20"  ItemsSource="{Binding AvailablePersons}" IsTextSearchEnabled="True" IsEditable="False" SelectedItem="{Binding SelectedPerson}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}"/>
@@ -23,7 +23,7 @@
                 </ComboBox>
             </StackPanel>
         </StackPanel>
-        <TabControl Name="Test" VerticalAlignment="Top" HorizontalAlignment="Stretch" SelectedIndex="{Binding SelectedTabIndex}" Grid.Row="2">
+        <TabControl Name="Test" VerticalAlignment="Top" HorizontalAlignment="Stretch" SelectedIndex="{Binding SelectedTabIndex}" Grid.Row="1">
             <TabItem Name="HomeTab"  Header="Summary">
                 <views:SummaryTabControl/>
             </TabItem>
