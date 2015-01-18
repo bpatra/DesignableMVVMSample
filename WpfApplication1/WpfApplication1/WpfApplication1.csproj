@@ -71,11 +71,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="IPerson.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="ViewModel\BooksReadTabViewModel.cs" />
-    <Compile Include="ViewModel\Design\Book.cs" />
+    <Compile Include="Book.cs" />
     <Compile Include="ViewModel\Design\DesignBooksReadTabViewModel.cs" />
+    <Compile Include="ViewModel\Design\DesignMainViewModel.cs" />
     <Compile Include="ViewModel\Design\DesignSummaryTabViewModel.cs" />
-    <Compile Include="ViewModel\IBook.cs" />
+    <Compile Include="IBook.cs" />
     <Compile Include="ViewModel\IBooksReadTabViewModel.cs" />
     <Compile Include="ViewModel\IMainViewModel.cs" />
     <Compile Include="ViewModel\ISummaryTabViewModel.cs" />

@@ -8,8 +8,14 @@
     <UserControl.DataContext>
         <Binding Path="MainViewModel.SummaryTabViewModel" Source="{StaticResource Locator}"/>
     </UserControl.DataContext>
-        <StackPanel>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Name: " />
             <TextBlock Text="{Binding Name}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Age: " />
             <TextBlock Text="{Binding Age}" />
+        </StackPanel>
     </StackPanel>
 </UserControl>

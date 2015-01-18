@@ -7,7 +7,7 @@ namespace WpfApplication1.ViewModel.Design
 {
     class DesignSummaryTabViewModel : ISummaryTabViewModel
     {
-        public string Name { get { return "Sophie Germain"; } }
-        public int Age { get { return 30; } }
+        public string Name { get { return "Raymond Domenech"; } }
+        public int Age { get { return 62; } }
     }
 }

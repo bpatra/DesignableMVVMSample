@@ -6,6 +6,7 @@ using System.Text;
 
 namespace WpfApplication1.ViewModel
 {
+    //HARDCODED values, not realistic implementation for the example... but you get the idea put your true logic here !!!
     public class SummaryTabViewModel : ISummaryTabViewModel
     {
         private readonly IPerson _person;

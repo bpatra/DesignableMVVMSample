@@ -30,9 +30,7 @@ namespace WpfApplication1.ViewModel
             _kernel = new StandardKernel();
             if (ViewModelBase.IsInDesignModeStatic)
             {
-                _kernel.Bind<IMainViewModel>().To<MainViewModel>();
-                _kernel.Bind<ISummaryTabViewModel>().To<DesignSummaryTabViewModel>();
-                _kernel.Bind<IBooksReadTabViewModel>().To<DesignBooksReadTabViewModel>();
+                _kernel.Bind<IMainViewModel>().To<DesignMainViewModel>();
             }
             else
             {

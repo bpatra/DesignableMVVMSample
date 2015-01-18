@@ -6,13 +6,12 @@ using WpfApplication1.ViewModel;
 
 namespace WpfApplication1
 {
-
-    public interface IPerson
+    public class Person : IPerson
     {
-        string Name { get; }
+        public string Name { get; set; }
 
-        int Age { get; }
+        public int Age { get; set; }
 
-        IBook[] Books { get;} 
+        public IBook[] Books { get; set; }
     }
 }

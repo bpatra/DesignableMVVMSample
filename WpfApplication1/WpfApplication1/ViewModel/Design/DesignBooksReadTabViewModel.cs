@@ -12,7 +12,7 @@ namespace WpfApplication1.ViewModel.Design
 
         public List<string> AllAvailableGenres
         {
-            get { return new List<string>(new[] { "Novel", "Drama", "Fantasy" }); }
+            get { return new List<string>(new[] { "Novel", "Drama", "Fantasy", "Classic", "Folklore", "Mythology " ,"Sports" }); }
         }
 
         public IBook SelectedBook { get { return this.BooksRead[0]; } set{throw new InvalidOperationException();}}
@@ -20,7 +20,12 @@ namespace WpfApplication1.ViewModel.Design
 
         public ObservableCollection<IBook> BooksRead
         {
-            get { return new ObservableCollection<IBook>(new[] { new Book("1984 Georges Orwell",0), new Book("Animal Farm",2)} ); }
+            get
+            {
+                return
+                    new ObservableCollection<IBook>(new[]
+                    {new Book("Tout seul", "Sports"), new Book("Mon dico passioné du football", "Sports")});
+            }
         }
     }
 }

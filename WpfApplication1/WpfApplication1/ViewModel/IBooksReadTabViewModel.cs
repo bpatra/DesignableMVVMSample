@@ -10,6 +10,8 @@ namespace WpfApplication1.ViewModel
     {
         ObservableCollection<IBook> BooksRead { get; }
 
+         List<string> AllAvailableGenres { get; }
+
         IBook SelectedBook { get; set; }
     }
 }

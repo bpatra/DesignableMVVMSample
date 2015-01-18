@@ -8,6 +8,7 @@ namespace WpfApplication1.ViewModel
     public interface IMainViewModel
     {
         IPerson SelectedPerson { get; set; }
+
         IList<IPerson> AvailablePersons { get; }
 
         int SelectedTabIndex { get; set; }
