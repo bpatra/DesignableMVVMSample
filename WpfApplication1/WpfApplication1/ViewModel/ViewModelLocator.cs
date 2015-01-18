@@ -43,9 +43,5 @@ namespace WpfApplication1.ViewModel
 
         public static IMainViewModel MainViewModel { get { return _kernel.Get<IMainViewModel>(); } }
 
-        public static ISummaryTabViewModel SummaryTabViewModel { get { return _kernel.Get<ISummaryTabViewModel>(); } }
-
-        public static IBooksReadTabViewModel BooksReadTabViewModel { get { return _kernel.Get<IBooksReadTabViewModel>(); } }
-
     }
 }
