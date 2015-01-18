@@ -9,9 +9,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="400">
     <UserControl.DataContext>
-        <Binding Path="MainViewModel.BooksReadTabViewModel" Source="{StaticResource Locator}" />
+        <Binding Path="MainViewModel.BooksWrittenTabViewModel" Source="{StaticResource Locator}" />
     </UserControl.DataContext>
-    <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Path=BooksRead}" SelectedItem="{Binding SelectedBook}">
+    <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Path=BooksWritten}" SelectedItem="{Binding SelectedBook}">
         <DataGrid.Columns>
             <DataGridTextColumn Header="BookName"  Binding="{Binding Path=Title}"/>
             <DataGridTemplateColumn Header="Genre">

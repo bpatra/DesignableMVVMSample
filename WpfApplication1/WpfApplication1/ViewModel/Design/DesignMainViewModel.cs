@@ -56,9 +56,9 @@ namespace WpfApplication1.ViewModel.Design
             get { return new DesignSummaryTabViewModel(); }
         }
 
-        public IBooksReadTabViewModel BooksReadTabViewModel
+        public IBooksWrittenTabViewModel BooksWrittenTabViewModel
         {
-            get { return new DesignBooksReadTabViewModel(); }
+            get { return new DesignBooksWrittenTabViewModel(); }
         }
     }
 }

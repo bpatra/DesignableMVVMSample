@@ -7,18 +7,18 @@ using Ninject;
 
 namespace WpfApplication1.ViewModel
 {
-    public class BooksReadTabViewModel : IBooksReadTabViewModel
+    public class BooksWrittenTabViewModel : IBooksWrittenTabViewModel
     {
         private IPerson _person;
 
 
         [Inject]
-        public BooksReadTabViewModel(IPerson person)
+        public BooksWrittenTabViewModel(IPerson person)
         {
             _person = person;
         }
 
-        public ObservableCollection<IBook> BooksRead { get{return new ObservableCollection<IBook>(_person.Books);} }
+        public ObservableCollection<IBook> BooksWritten { get{return new ObservableCollection<IBook>(_person.Books);} }
 
         public List<string> AllAvailableGenres
         {

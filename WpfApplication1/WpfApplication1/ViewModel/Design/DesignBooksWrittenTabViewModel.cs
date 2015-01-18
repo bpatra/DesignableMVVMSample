@@ -6,8 +6,8 @@ using System.Text;
 
 namespace WpfApplication1.ViewModel.Design
 {
-    public class DesignBooksReadTabViewModel
-        : IBooksReadTabViewModel
+    public class DesignBooksWrittenTabViewModel
+        : IBooksWrittenTabViewModel
     {
 
         public List<string> AllAvailableGenres
@@ -15,10 +15,10 @@ namespace WpfApplication1.ViewModel.Design
             get { return new List<string>(new[] { "Novel", "Drama", "Fantasy", "Classic", "Folklore", "Mythology " ,"Sports" }); }
         }
 
-        public IBook SelectedBook { get { return this.BooksRead[0]; } set{throw new InvalidOperationException();}}
+        public IBook SelectedBook { get { return this.BooksWritten[0]; } set{throw new InvalidOperationException();}}
 
 
-        public ObservableCollection<IBook> BooksRead
+        public ObservableCollection<IBook> BooksWritten
         {
             get
             {

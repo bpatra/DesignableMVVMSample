@@ -35,7 +35,7 @@ namespace WpfApplication1.ViewModel
             {
                 _selectedPerson = value;
                 RaisePropertyChanged(()=>SummaryTabViewModel);
-                RaisePropertyChanged(() => BooksReadTabViewModel);
+                RaisePropertyChanged(() => BooksWrittenTabViewModel);
             }
         }
         public IList<IPerson> AvailablePersons { get { return _availablePersons; } }
@@ -46,9 +46,9 @@ namespace WpfApplication1.ViewModel
             get { return new SummaryTabViewModel(_selectedPerson); }
         }
 
-        public IBooksReadTabViewModel BooksReadTabViewModel
+        public IBooksWrittenTabViewModel BooksWrittenTabViewModel
         {
-            get { {return new BooksReadTabViewModel(_selectedPerson);} }
+            get { {return new BooksWrittenTabViewModel(_selectedPerson);} }
         }
     }
 }

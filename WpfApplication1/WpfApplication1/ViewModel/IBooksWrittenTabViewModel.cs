@@ -6,9 +6,9 @@ using System.Text;
 
 namespace WpfApplication1.ViewModel
 {
-    public interface IBooksReadTabViewModel
+    public interface IBooksWrittenTabViewModel
     {
-        ObservableCollection<IBook> BooksRead { get; }
+        ObservableCollection<IBook> BooksWritten { get; }
 
          List<string> AllAvailableGenres { get; }
 

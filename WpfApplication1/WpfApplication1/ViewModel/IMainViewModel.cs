@@ -15,6 +15,6 @@ namespace WpfApplication1.ViewModel
 
         ISummaryTabViewModel SummaryTabViewModel { get; }
 
-        IBooksReadTabViewModel BooksReadTabViewModel { get; }
+        IBooksWrittenTabViewModel BooksWrittenTabViewModel { get; }
     }
 }
